@@ -1,0 +1,22 @@
+<h1><%= @post.title %></h1>
+<small>Written: <%= @post.created_at.strftime("%Y-%m-%d") %></small>
+<p><%= @post.content.html_safe %><p>
+<br />
+
+<% if @post.comments.size > 0 %>
+    <h2>Comments</h2>
+    <hr />
+    <% for comment in @post.comments %>
+        <h4><%= comment.author %></h4>
+        <blockquote><%= comment.content %></blockquote>
+        <hr />
+    <% end %>
+<% end %>
+
+<h2>New Comment</h2>
+<%= form_for [@post, Comment.new] do |f| %>
+  <p><%= f.label :author %> <%= f.text_field :author %></p>
+  <p><%= f.text_area :content, :rows => 10 %></p>
+  <p><%= f.submit %></p>
+<% end %>
+<%= link_to "Home", posts_path %>

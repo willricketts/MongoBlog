@@ -1,0 +1,12 @@
+
+<H1>Edit Post</h1>
+<%= form_for @post do |f| %>
+    <p><%= f.label :title %></p>
+    <%= f.text_field :title %>
+    <br />
+    <p><%= f.label :content %></p>
+    <%= f.cktext_area :content, :ckeditor => {:language => "en"}  %><br />
+    <%= f.submit "Update Post" %>
+<% end %>
+
+<%= link_to "Home", posts_path %>

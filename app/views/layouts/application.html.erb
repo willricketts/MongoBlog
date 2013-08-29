@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Will Ricketts | Blog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div id="user_nav">
+                <% if user_signed_in? %>
+                    Signed in as <%= current_user.email %>. Not you?
+                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <% flash.each do |key, value| %>
+        <p><%= value %></p>
+    <% end %>
+    <div class="row">
+
+        <%= yield %>
+    
+    </div>
+    <div class="push"></div>
+    <div class="row">
+        <div class="col-lg-8">
+            <footer>
+                <div class="footer">
+                    <p>© 2013 Will Ricketts</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

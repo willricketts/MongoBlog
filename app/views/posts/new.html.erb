@@ -1,0 +1,14 @@
+<h1>New Post</h1>
+<%= form_for @post do |f| %>
+<p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+</p>
+<p>
+    <%= f.label :content %><br />
+    <%= f.cktext_area :content, :ckeditor => {:language => "en"}  %><br />
+</p>
+<p>
+    <%= f.submit "Add a new Post" %>
+</p>
+<% end %>
