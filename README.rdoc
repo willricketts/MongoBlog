@@ -1,3 +1,5 @@
 MongoDB based blog.
 
-Sadly, the git repo received a fatal dose of Cheeto-radiation due to this being built in Cloud9 IDE, and its unwillingness to exclude inordinately large files.
+Sadly, the git repo received a fatal dose of Cheeto-radiation due to this being built in Cloud9 IDE, and its unwillingness to exclude inordinately large files. Its revision history went on a vacation to the Bermuda Triangle. It sends its regards.
+
+MongoBlog or how I learned to stop worrying and love NoSQL.
